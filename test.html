@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            <label for="ch">Chapter:</label><br>
+            <input type="number" id="cha" name="cha"><br>
+            <label for="q">Question Number:</label><br>
+            <input type="number" id="qa" name="qa">
+
+        </form>
+
+        <button type="button" id="get" onclick="getAnswer()">Get Answer</button>
+
+        <p id="ans">answer: </p>
+    </body>
+    <script>
+
+        function getAnswer() {
+            if (document.getElementById("cha").value == "4") {
+                document.getElementById("ans").innerHTML = "Answer: " + chap4(document.getElementById("qa").value);
+            } else if (document.getElementById("cha").value == "5") {
+                document.getElementById("ans").innerHTML = "Answer: " + chap5(document.getElementById("qa").value);
+            } else if (document.getElementById("cha").value == "6") {
+                document.getElementById("ans").innerHTML = "Answer: " + chap6(document.getElementById("qa").value);
+            } else if (document.getElementById("cha").value == "8") {
+                document.getElementById("ans").innerHTML = "Answer: " + chap8(document.getElementById("qa").value);
+            } else {
+                document.getElementById("ans").innerHTML = "chapter not supported";
+            }
+        }
+
+        function chap4(q) {
+            let p1 = (8 - q) * (q - 13);
+            let p2 = p1 / 1124000727777607680000;
+            
+            let p3 = 2589921 * (q ** 20); 
+            let p4 = -620971564 * (q**19);
+            let p5 = 69423099345 * (q**18);
+            let p6 = -4806766465014 * (q**17);
+            let p7 = 230899932610842 * (q**16);
+            let p8 = -8169389717215632 * (q**15);
+            let p9 = 220586586800424618 * (q**14);
+            let p10 = -4647674007708156244 * (q**13); 
+            let p11 = 77476979497825900605 * (q**12); 
+            let p12 = -1030053788706159491604 * (q**11);
+            let p13 = 10959483916353239897109 * (q**10); 
+            let p14 = -93271675129269813361830 * (q**9); 
+            let p15 = 632244936492076757044200 * (q**8); 
+            let p16 = -3385228258098598108643680 * (q**7); 
+            let p17 = 14130773682356625716347728 * (q**6);
+            let p18 = -45102898214794395825350112 * (q**5); 
+            let p19 = 106997731513995321973688832 * (q**4); 
+            let p20 = -180767589559124196906328320 * (q**3); 
+            let p21 = 203071404272270227797196800 * (q**2); 
+            let p22 = -133878199055047374445056000 * q;
+            let p23 = 38385003123080996659200000;
+            
+            let ps = p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + p20 + p21 + p22 + p23;
+            let ans = p2 * ps;
+            
+            return Math.round(ans);
+        }
+
+
+        function chap8(q) {
+            let p1 = (7 - q) * (q - 8) * (q - 16) * (q - 18);
+            let p2 = p1 / 121645100408832000;
+            
+            let p8 = 103970 * (q**15);
+            let p9 = -15568369 * (q**14);
+            let p10 = 1059701722 * (q**13); 
+            let p11 = -43412289962 * (q**12); 
+            let p12 = 1194411750066 * (q**11);
+            let p13 = -23319553680636 * (q**10); 
+            let p14 = 332799752928394 * (q**9); 
+            let p15 = -3523448519752022 * (q**8); 
+            let p16 = 27795019328876660 * (q**7); 
+            let p17 = -162648169815352915 * (q**6);
+            let p18 = 696639408177577764 * (q**5); 
+            let p19 = -2131716155722024176 * (q**4); 
+            let p20 = 4478184857529759024 * (q**3); 
+            let p21 = -6041366458551072720 * (q**2); 
+            let p22 = 4623553951643865600 * q;
+            let p23 = -1487263710572640000;
+            
+            let ps = p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + p20 + p21 + p22 + p23;
+            let ans = p2 * ps;
+            
+            return Math.round(ans);
+        }
+
+        function chap5(q) {
+            let p1 = (q - 6) * (q - 8);
+            let p2 = p1 / 43589145600;
+            
+            let p11 = 10797 * (q**12); 
+            let p12 = -1055593 * (q**11);
+            let p13 = 45826777 * (q**10); 
+            let p14 = -1164049005 * (q**9); 
+            let p15 = 19189173531 * (q**8); 
+            let p16 = -215248002879 * (q**7); 
+            let p17 = 1675411520451 * (q**6);
+            let p18 = -9060403800455 * (q**5); 
+            let p19 = 33544546305092 * (q**4); 
+            let p20 = -82239169086228 * (q**3); 
+            let p21 = 125487556706712 * (q**2); 
+            let p22 = -105640625497680 * q;
+            let p23 = 36432352756800;
+            
+            let ps = p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + p20 + p21 + p22 + p23;
+            let ans = p2 * ps;
+            
+            return Math.round(ans);
+        }
+
+        function chap6(q) {
+            let p1 = (q - 11) * (q - 13);
+            let p2 = p1 / 87178291200;
+            
+            let p11 = 1089 * (q**12); 
+            let p12 = -116573 * (q**11);
+            let p13 = 5381302 * (q**10); 
+            let p14 = -142156230 * (q**9); 
+            let p15 = 2396346345 * (q**8); 
+            let p16 = -27145875477 * (q**7); 
+            let p17 = 211531944480 * (q**6);
+            let p18 = -1139061310840 * (q**5); 
+            let p19 = 4188105987776 * (q**4); 
+            let p20 = -10190496277200 * (q**3); 
+            let p21 = 15440801565888 * (q**2); 
+            let p22 = -12920388364800 * q;
+            let p23 = 4435119360000;
+            
+            let ps = p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + p20 + p21 + p22 + p23;
+            let ans = p2 * ps;
+            
+            return Math.round(ans);
+        }
+    </script>
+</html>
