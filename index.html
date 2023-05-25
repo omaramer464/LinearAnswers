@@ -1,31 +1,74 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Lecture Notes Answer Key</title>
+    </head>
     <body>
-        <form>
-            <label for="ch">Chapter:</label><br>
-            <input type="number" id="cha" name="cha"><br>
-            <label for="q">Question Number:</label><br>
-            <input type="number" id="qa" name="qa">
 
-        </form>
+        <h3>Prof. Ziyad's Lecture Notes Answers</h3>
 
-        <button type="button" id="get" onclick="getAnswer()">Get Answer</button>
+        <div>
+            <select id="cha" name="cha">
+                <option value="1">Chatper 1</option>
+                <option value="2">Chatper 2</option>
+                <option value="4">Chatper 4</option>
+                <option value="5">Chatper 5</option>
+                <option value="6">Chatper 6</option>
+                <option value="8">Chatper 8</option>
+            </select>
 
-        <p id="ans">answer: </p>
+            <label for="q"><input type="text" id="qa" name="qa" placeholder="Question"></label>
+
+            <button type="button" id="get" onclick="getAnswer()">Get Answer</button>
+        </div>
+        <br>
+
+        <div>
+            <p id="q"></p>
+            <p id="ans">--</p>
+        </div>
     </body>
     <script>
 
         function getAnswer() {
-            if (document.getElementById("cha").value == "4") {
-                document.getElementById("ans").innerHTML = "Answer: " + chap4(document.getElementById("qa").value);
+            if (document.getElementById("cha").value == "1") {
+                document.getElementById("q").innerHTML = document.getElementById("qa").value + ")";
+                document.getElementById("ans").innerHTML = answerLetter(chap1(document.getElementById("qa").value));
+            } else if (document.getElementById("cha").value == "2") {
+                document.getElementById("q").innerHTML = document.getElementById("qa").value + ")";
+                document.getElementById("ans").innerHTML = answerLetter(chap2(document.getElementById("qa").value));
+            } else if (document.getElementById("cha").value == "4") {
+                document.getElementById("q").innerHTML = document.getElementById("qa").value + ")";
+                document.getElementById("ans").innerHTML = answerLetter(chap4(document.getElementById("qa").value));
             } else if (document.getElementById("cha").value == "5") {
-                document.getElementById("ans").innerHTML = "Answer: " + chap5(document.getElementById("qa").value);
+                document.getElementById("q").innerHTML = document.getElementById("qa").value + ")";
+                document.getElementById("ans").innerHTML = answerLetter(chap5(document.getElementById("qa").value));
             } else if (document.getElementById("cha").value == "6") {
-                document.getElementById("ans").innerHTML = "Answer: " + chap6(document.getElementById("qa").value);
+                document.getElementById("q").innerHTML = document.getElementById("qa").value + ")";
+                document.getElementById("ans").innerHTML = answerLetter(chap6(document.getElementById("qa").value));
             } else if (document.getElementById("cha").value == "8") {
-                document.getElementById("ans").innerHTML = "Answer: " + chap8(document.getElementById("qa").value);
+                document.getElementById("q").innerHTML = document.getElementById("qa").value + ")";
+                document.getElementById("ans").innerHTML = answerLetter(chap8(document.getElementById("qa").value));
             } else {
                 document.getElementById("ans").innerHTML = "chapter not supported";
+            }
+        }
+
+        function answerLetter(a) {
+            if (a == 4) {
+                return "A";
+            } else if (a == 3) {
+                return "B";
+            } else if (a == 2) {
+                return "C";
+            } else if (a == 1) {
+                return "D";
+            } else if (a == 0) {
+                return "E";
+            } else {
+                document.getElementById("q").innerHTML = "";
+                return "--";
             }
         }
 
@@ -61,6 +104,61 @@
             return Math.round(ans);
         }
 
+        function chap2(q) {
+            let p1 = (10 - q);
+            let p2 = p1 / 355687428096000;
+            
+            let p7 = 10758 * (q**16);
+            let p8 = -1484453 * (q**15);
+            let p9 = 92215214 * (q**14);
+            let p10 = -3398451240 * (q**13); 
+            let p11 = 82285109236 * (q**12); 
+            let p12 = -1364608420606 * (q**11);
+            let p13 = 15544055104428 * (q**10); 
+            let p14 = -115562554325860 * (q**9); 
+            let p15 = 438590200945054 * (q**8); 
+            let p16 = 973391625942171 * (q**7); 
+            let p17 = -24595677559907098 * (q**6);
+            let p18 = 165003247108392340 * (q**5); 
+            let p19 = -640439727221039448 * (q**4); 
+            let p20 = 1557560420631813888 * (q**3); 
+            let p21 = -2314197190169852544 * (q**2); 
+            let p22 = 1890868929375605760 * q;
+            let p23 = -635471159036313600;
+            
+            let ps = p7 + p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + p20 + p21 + p22 + p23;
+            let ans = p2 * ps;
+            
+            return Math.round(ans);
+        }
+
+        function chap1(q) {
+            let p1 = (q - 17) * (q - 10) * (q - 14) * -1;
+            let p2 = p1 / 40548366802944000;
+            
+            let p7 = 141152 * (q**16);
+            let p8 = -22355207 * (q**15);
+            let p9 = 1617611866 * (q**14);
+            let p10 = -70876340212 * (q**13); 
+            let p11 = 2101133305428 * (q**12); 
+            let p12 = -44604194650854 * (q**11);
+            let p13 = 699971500569760 * (q**10); 
+            let p14 = -8264345390407696 * (q**9); 
+            let p15 = 74000846499503108 * (q**8); 
+            let p16 = -502733933313186491 * (q**7); 
+            let p17 = 2573893661328012102 * (q**6);
+            let p18 = -9786955432883841492 * (q**5); 
+            let p19 = 26961095920179608712 * (q**4); 
+            let p20 = -51697069765671858048 * (q**3); 
+            let p21 = 64545853915420198272 * (q**2); 
+            let p22 = -46366937861151052800 * q;
+            let p23 = 14206546237634150400;
+            
+            let ps = p7 + p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + p20 + p21 + p22 + p23;
+            let ans = p2 * ps;
+            
+            return Math.round(ans);
+        }
 
         function chap8(q) {
             let p1 = (7 - q) * (q - 8) * (q - 16) * (q - 18);
